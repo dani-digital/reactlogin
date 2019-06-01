@@ -23,24 +23,24 @@ class Register extends Component {
     console.log("nextProps",nextProps);
   }
   handleClick(event){
-    var apiBaseUrl = "https://random-acts0519.herokuapp.com/";
+    const apiBaseUrl = "https://random-acts0519.herokuapp.com/api/";
     console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
-    var self = this;
-    var payload={
+    const self = this;
+    const payload={
     "first_name": this.state.first_name,
     "last_name":this.state.last_name,
     "email":this.state.email,
     "password":this.state.password
     }
-    axios.post(apiBaseUrl+'/register', payload)
+    axios.post(apiBaseUrl+'register', payload)
    .then(function (response) {
      console.log(response);
      if(response.data.code == 200){
-      //  console.log("registration successfull");
-       var loginscreen=[];
+      console.log("registration successful");
+       const loginscreen=[];
        loginscreen.push(<Login parentContext={this}/>);
-       var loginmessage = "Not Registered yet. Go to registration";
+       const loginmessage = "Not Registered yet. Go to registration";
        self.props.parentContext.setState({loginscreen:loginscreen,
        loginmessage:loginmessage,
        buttonLabel:"Register",

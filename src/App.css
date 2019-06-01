@@ -1,3 +1,6 @@
+body{
+  background-color: #fdbfbe;
+}
 .App {
   text-align: center;
 }
@@ -33,9 +36,9 @@
 }
 
 .loginscreen {
-  background-color: lightyellow;
+  background-color: #fdbfbe ;
 }
 
 .topbar{
-  background-color: purple;
+  background-color: #fdbfbe;
 }

@@ -64,20 +64,21 @@ class Login extends Component {
     axios.post(apiBaseUrl+'login', payload)
     .then(function (response) {
     console.log(response);
-    if(response.data.code == 200){
-    console.log("Login successfull");
-    const dashboard=[];
-    dashboard.push(<DashBoard appContext={self.props.appContext}/>)
-    self.props.appContext.setState({loginPage:[],dashboard:dashboard})
-    }
-    else if(response.data.code == 204){
-    console.log("username and password do not match");
-    alert("username and password do not match")
-    }
-    else{
-    console.log("username does not exists");
-    alert("username does not exist");
-    }
+      if(response.data.code === 200){
+      console.log("Login successful");
+      this.props.history.push('/dashboard')
+       const dashboard=[];
+       dashboard.push(<DashBoard appContext={self.props.appContext}/>)
+       self.props.appContext.setState({loginPage:[],dashboard:dashboard})
+      }
+      else if(response.data.code === 204){
+      console.log("username and password do not match");
+      alert("username and password do not match")
+      }
+      else{
+      console.log("username does not exists");
+      alert("username does not exist");
+      }
     })
     .catch(function (error) {
     console.log(error);
