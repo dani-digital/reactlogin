@@ -5,7 +5,7 @@ import React from 'react';
 function DashBoard() {
   return(
     <div>
-      <h1>Welcome to your Good Will Gestures, {this.props.first_name}!</h1>
+      <h1>Welcome to your Good Will Gestures, {this.props.username}!</h1>
      </div>
   )
 }

@@ -3,6 +3,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Login from './login';
 import Register from './register';
+import './App.css';
+
 
 class Loginscreen extends Component {
   constructor(props){

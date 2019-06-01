@@ -5,6 +5,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import Login from './login';
+import './App.css';
+
 
 class Register extends Component {
   constructor(props){
@@ -54,7 +56,7 @@ class Register extends Component {
     return (
       <div>
         <MuiThemeProvider>
-          <div>
+          <div class="topbar"> 
           <AppBar
              title="Register"
            />

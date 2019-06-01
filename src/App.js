@@ -7,7 +7,7 @@ import Loginscreen from './loginscreen';
 import DashBoard from './dashboard';
 //import axios from 'axios'
 
-injectTapEventPlugin();
+//injectTapEventPlugin();
 
 
 class App extends Component {
@@ -29,17 +29,17 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.loginPage}
-        {this.state.uploadScreen}
+        {this.state.dashboard}
       </div>
     );
   }
 }
-if(response.data.code == 200){
-  console.log("Login successfull");
-  const dashboard=[];
-  dashboard.push(<DashBoard appContext={self.props.appContext}/>)
-  self.props.appContext.setState({loginPage:[],dashboard:dashboard})
-  }
+// if(response.data.code == 200){
+//   console.log("Login successfull");
+//   const dashboard=[];
+//   dashboard.push(<DashBoard appContext={self.props.appContext}/>)
+//   self.props.appContext.setState({loginPage:[],dashboard:dashboard})
+//   }
 
   const style = {
     margin: 15,

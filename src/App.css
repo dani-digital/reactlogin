@@ -20,7 +20,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: purple;
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +30,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.loginscreen {
+  background-color: lightyellow;
+}
+
+.topbar{
+  background-color: purple;
 }
