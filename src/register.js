@@ -12,8 +12,8 @@ class Register extends Component {
   constructor(props){
     super(props);
     this.state={
-      first_name:'',
-      last_name:'',
+      name:'',
+      username:'',
       email:'',
       password:''
     }
@@ -24,23 +24,23 @@ class Register extends Component {
   }
   handleClick(event){
     const apiBaseUrl = "https://random-acts0519.herokuapp.com/api/";
-    console.log("values",this.state.first_name,this.state.last_name,this.state.email,this.state.password);
+    console.log("values",this.state.name,this.state.username,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
     const self = this;
     const payload={
-    "first_name": this.state.first_name,
-    "last_name":this.state.last_name,
+    "name": this.state.name,
+    "username":this.state.username,
     "email":this.state.email,
     "password":this.state.password
     }
     axios.post(apiBaseUrl+'register', payload)
    .then(function (response) {
      console.log(response);
-     if(response.data.code == 200){
+     if(response.data.code === 200){
       console.log("registration successful");
-       const loginscreen=[];
+       var loginscreen=[];
        loginscreen.push(<Login parentContext={this}/>);
-       const loginmessage = "Not Registered yet. Go to registration";
+       var loginmessage = "Not registered yet? Register Now!";
        self.props.parentContext.setState({loginscreen:loginscreen,
        loginmessage:loginmessage,
        buttonLabel:"Register",
@@ -56,20 +56,20 @@ class Register extends Component {
     return (
       <div>
         <MuiThemeProvider>
-          <div class="topbar"> 
+          <div className="topbar"> 
           <AppBar
              title="Register"
            />
            <TextField
-             hintText="Enter your First Name"
-             floatingLabelText="First Name"
-             onChange = {(event,newValue) => this.setState({first_name:newValue})}
+             hintText="Enter your Name"
+             floatingLabelText="Name"
+             onChange = {(event,newValue) => this.setState({name:newValue})}
              />
            <br/>
            <TextField
-             hintText="Enter your Last Name"
-             floatingLabelText="Last Name"
-             onChange = {(event,newValue) => this.setState({last_name:newValue})}
+             hintText="Enter a User Name"
+             floatingLabelText="Username"
+             onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
            <TextField
